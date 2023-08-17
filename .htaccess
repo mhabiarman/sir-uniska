@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^berita/([^/\.]+)/?$ berita-terkait.php?id=$1 [L]
+RewriteRule ^berita/pencarian/([^/\.]+)/?$ berita-pencarian.php?id=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+</IfModule>
